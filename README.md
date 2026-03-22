@@ -6,6 +6,8 @@ A context model for structuring engagement knowledge — designed for teams usin
 
 As teams bring agentic tools into their workflows, they generate more artifacts than ever — but repos become messy and fragmented. Agents choke on context because they treat every document as equal weight, adding noise instead of signal. A vision statement, a brainstorming scratch pad, an old spec plan, and half-finished research findings all look the same to them. Business intent gets buried, and designs drift tech-first because the "why" gets left behind.
 
+<img src="wwh-context-problem.png" alt="The context problem" width="600">
+
 ## The Framework
 
 Why–What–How is not a new process. It is a **structure** that existing processes feed into. It organises project knowledge into four areas:
@@ -25,6 +27,8 @@ When writing something, ask:
 - Is it about structure or how parts interact? → **Solution**
 - Is it about how we build consistently? → **Standards**
 - Is it about why we made a choice? → **Decisions**
+
+<img src="wwh-areas.png" alt="The 4 areas" width="600">
 
 ## The Practical Difference
 
@@ -95,7 +99,7 @@ The `docs.index.md` file is a template with placeholder sections for your projec
 
 ## Reference Example
 
-_A reference implementation demonstrating the full framework on a concrete project is coming soon._
+See [why-what-how-bubbletea-kiosk-example](https://github.com/DavidBurela/why-what-how-bubbletea-kiosk-example) — a fully populated reference implementation demonstrating the framework on a bubble tea ordering kiosk project.
 
 ## License
 
