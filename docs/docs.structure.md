@@ -20,6 +20,7 @@ docs/
   docs.why-what-how.c4model.md
   docs.why-what-how.bdd.md
   docs.bootstrap.md
+  docs.playbook.md
   docs.conventions.md
 
   business/

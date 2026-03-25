@@ -34,6 +34,39 @@ When writing something, ask:
 
 Your stakeholder workshops and discovery outputs land in Business. Your architecture decisions land in Solution. Your conventions land in Standards. Agents can progressively load context by depth instead of consuming everything. New team members orient in minutes instead of hours. The business intent that drove the project stays front and centre — not scattered across working documents, spec files, and decision records with no clear home.
 
+## Getting Started
+
+### 1. Copy the framework files
+
+Copy the `docs/` folder into your project repository. The framework files (`docs.*.md`) are project-agnostic and work as-is.
+
+### 2. Understand the phases
+
+Read [docs.bootstrap.md](docs/docs.bootstrap.md) — it defines what to create and in what order:
+
+- **Phase 1** — Business foundation: context, vision, outcomes, scope
+- **Phase 2** — People: personas, journeys, scenarios
+- **Phase 3** — Solution: system context, applications, decisions
+- **Phase 4** — Depth: flows, C4 model, standards, BDD tests
+
+### 3. Bootstrap your project
+
+Open the [prompt-examples.md](prompt-examples.md), and use the [Bootstrap](prompt-examples.md#bootstrap) section to pick the starting prompt that fits your situation:
+
+- **Bootstrap a new project** — greenfield, early discussions
+- **Refactor existing docs** — restructure scattered markdown into the canonical structure
+- **Distil alongside existing docs** — try the structure without moving existing files
+
+Paste the prompt into an agent session, fill in the placeholders, and go.
+
+### 4. Learn further ways to use during a project
+
+Once your project has its initial docs, read [docs.playbook.md](docs/docs.playbook.md) to learn when and how to engage with the structure throughout the project lifecycle — from post-envisioning updates to feature planning and onboarding. The [prompt catalog](prompt-examples.md) has copy-paste-ready prompts for each scenario.
+
+### 5. See it in action
+
+Check out a the [Compile & Sip Bubble Tea Kiosk](https://github.com/DavidBurela/why-what-how-bubbletea-kiosk-example) reference implementation. It is a fully populated example demonstrating the framework on a realistic project. It includes all four areas, Personas, Scenarios, linked BDD tests (Business Driven Development), and a C4 model.
+
 ## The Four Areas
 
 ### Business (Why)
@@ -63,6 +96,25 @@ Decisions preserve reasoning using Architecture Decision Records (ADRs) — what
 
 Each ADR is **scoped to an area**: `solution` for system-wide choices, `application-<name>` for choices specific to one application, or `standards` for convention decisions. This scoping is deliberate — when an agent is working on a specific application, it loads only the decisions relevant to that application rather than every ADR in the repository. When working on system-level architecture, it loads solution-scoped decisions. The scope is visible in the filename: `ADR-0005-application-order-api-storage-technology.md`.
 
+## Key Design Principles
+
+**Progressive context loading** — Agents load only the depth they need. Directory depth matches abstraction depth. An agent working on a specific application loads that application's folder, not the entire tree.
+
+**Canonical knowledge = single source** — One structural graph (C4 DSL). One explanatory hierarchy (markdown). No duplicate relationship definitions.
+
+**Business never points into Solution** — The implementer references the requirement, not the other way around. Business layer documents remain independent of solution internals.
+
+**Definition and validation at every layer** — Each layer has both a definition side and a validation side. BDD catches intent errors. C4 validation catches structural errors. TDD catches implementation errors.
+
+## Additional Resources
+
+### Blog Post
+
+For a narrative introduction to the framework, see [Why–What–How: A Structure for Project Knowledge](https://blog.davidburela.com/2026/03/23/why-what-how-a-structure-for-project-knowledge/).
+
+### Reference Implementation
+For a fully populated reference implementation demonstrating the framework on a bubble tea ordering Kiosk project. See [https://github.com/DavidBurela/why-what-how-bubbletea-kiosk-example](https://github.com/DavidBurela/why-what-how-bubbletea-kiosk-example).
+
 ## What's in This Repo
 
 The `docs/` folder contains **project-agnostic framework guidance files**. They define the model, conventions, folder structure, bootstrap playbook, and area-specific guidance. They are designed to be copied into your project repository as a starting point.
@@ -77,29 +129,8 @@ The `docs/` folder contains **project-agnostic framework guidance files**. They 
 | [docs.conventions.md](docs/docs.conventions.md) | Naming conventions, linking rules, ADR scope vocabulary |
 | [docs.structure.md](docs/docs.structure.md) | Target folder tree and structural rules |
 | [docs.bootstrap.md](docs/docs.bootstrap.md) | Phased creation playbook: what to create first, what to defer |
-
-## How to Use
-
-1. Copy the `docs/` folder into your project repository
-2. Start with `docs.bootstrap.md` — it defines a phased creation order
-3. Phase 1 is four files: `business-context.md`, `vision.md`, `outcomes.md`, `scope.md`
-4. Build depth incrementally as your project needs it
-
-The `docs.index.md` file is a template with placeholder sections for your project's Business, Solution, Standards, and Decisions content. Rename the project reference and populate the sections as you go.
-
-## Key Design Principles
-
-**Progressive context loading** — Agents load only the depth they need. Directory depth matches abstraction depth. An agent working on a specific application loads that application's folder, not the entire tree.
-
-**Canonical knowledge = single source** — One structural graph (C4 DSL). One explanatory hierarchy (markdown). No duplicate relationship definitions.
-
-**Business never points into Solution** — The implementer references the requirement, not the other way around. Business layer documents remain independent of solution internals.
-
-**Definition and validation at every layer** — Each layer has both a definition side and a validation side. BDD catches intent errors. C4 validation catches structural errors. TDD catches implementation errors.
-
-## Reference Example
-
-See [why-what-how-bubbletea-kiosk-example](https://github.com/DavidBurela/why-what-how-bubbletea-kiosk-example) — a fully populated reference implementation demonstrating the framework on a bubble tea ordering kiosk project.
+| [docs.playbook.md](docs/docs.playbook.md) | Lifecycle playbook: when and how to engage throughout the project lifecycle |
+| [prompt-examples.md](prompt-examples.md) | Copy-paste-ready agent prompts organised by scenario |
 
 ## License
 

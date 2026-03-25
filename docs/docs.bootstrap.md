@@ -4,6 +4,8 @@ How to set up the Why–What–How documentation framework for a new project.
 
 This is a creation playbook — it tells you what to create, in what order, and what questions to answer at each phase. For the model itself, see `docs.why-what-how.md`. For expected sections within each file, see `docs.why-what-how.area-guidance.md`. For naming and linking rules, see `docs.conventions.md`. For the target folder layout, see `docs.structure.md`.
 
+For ongoing lifecycle guidance — when and how to engage with the structure after initial setup — see `docs.playbook.md`. For existing projects with scattered documentation, `docs.playbook.md` also covers refactoring and distilling into this structure.
+
 ## Principles
 
 - Start from business intent, not solution structure.
@@ -37,6 +39,7 @@ Copy the `docs.*.md` framework files into the new project:
 - `docs.structure.md`
 - `docs.conventions.md`
 - `docs.bootstrap.md` (this file)
+- `docs.playbook.md`
 
 These are project-agnostic and work as-is. The only file that must be project-specific from the start is `docs.index.md`.
 
@@ -181,6 +184,7 @@ docs/
   docs.conventions.md
   docs.structure.md
   docs.bootstrap.md
+  docs.playbook.md
 
   business/
     business.index.md

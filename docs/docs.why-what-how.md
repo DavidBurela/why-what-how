@@ -81,8 +81,19 @@ Decisions preserve reasoning using ADRs:
 
 ---
 
-## Extensions
+## Framework files
+
+The framework is described by two kinds of portable files:
+
+**Model extensions** (`docs.why-what-how.*`) elaborate on specific aspects of the four-area model:
 
 - `docs.why-what-how.area-guidance.md` — what each file should contain (expected sections, content patterns).
 - `docs.why-what-how.bdd.md` — journeys, scenarios, and BDD testing.
 - `docs.why-what-how.c4model.md` — C4 model and diagram exports.
+
+**Operational guides** (`docs.*`) tell you how to use the framework in practice:
+
+- `docs.bootstrap.md` — what to create and in what order (initial setup).
+- `docs.playbook.md` — when and how to engage throughout the project lifecycle.
+- `docs.structure.md` — where files live (folder tree layout and structural rules).
+- `docs.conventions.md` — naming, linking, and maintenance rules.
